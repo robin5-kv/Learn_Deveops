@@ -1,0 +1,8 @@
+if we face issue in jenkins like continue integration error once we checked the status command procedure needs to be followed
+update-alternatives --config java 
+select the auto-mode java 0
+systemctl stop jenkins
+systemctl start jenkins
+systemctl status jenkins
+Issue is solved
+
