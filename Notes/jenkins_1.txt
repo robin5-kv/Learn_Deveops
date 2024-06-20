@@ -6,3 +6,5 @@ systemctl start jenkins
 systemctl status jenkins
 Issue is solved
 
+
+
