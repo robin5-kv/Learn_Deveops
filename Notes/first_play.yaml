@@ -1,0 +1,41 @@
+---
+- name: Update web servers
+  hosts: webserver
+  become: true
+  tasks:
+    - name: Install Apache
+      apt:
+        update_cache: yes
+
+    - name: dummy
+      apt:
+        name: apache2
+        state: present
+    
+    - name: Start Apache service
+      ansible.builtin.service:
+        name: apache2
+        state: started
+
+        
+- name: Update db servers
+  hosts: dbserver
+  become: true
+  tasks:
+  - name: Ensure postgresql is at the latest version
+    apt:
+      update_cache: yes
+  - name: install
+    apt:   
+      name: postgresql
+      state: present
+
+...
+
+
+
+
+
+
+
+
