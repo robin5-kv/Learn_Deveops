@@ -1,0 +1,19 @@
+FROM ubuntu:latest
+
+LABEL "Name"="Robin"
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+# Update the package repository and install Apache2
+RUN apt-get update && apt-get install -y apache2  && apt-get clean
+
+#Working in th workdirectory either by relative path or from root of the folder
+WORKDIR /var/www/html
+# differnce between ADD and Copy command ADD command will unzip the folder and paste it But COPY command just will place it# as it as
+ADD clean.tar.gz /var/www/html
+
+# Start Apache2 service when the container starts
+CMD ["apachectl", "-D", "FOREGROUND"]
+
+# Expose port 80 to the host
+EXPOSE 80
