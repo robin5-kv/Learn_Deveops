@@ -11,3 +11,14 @@ Need to Install Jenkins
 In Jenkins Build triggers select GitHub hook trigger for GITScm polling
 In setting select  Webhook the url should  http://instance:8080/gitub-webhook/
 create personal token in settings-> developer settings
+
+
+
+## Docker t
+
+to run only ubuntu and base image we need to execute docker container run -d -it --name containername imageid
+
+# Docker file 
+
+WORKDIR command is used to create  folder suppose /app defines folder is created in the container
+COPY ./  refers sorcefilelocation destinationfile will be WORDIR/ i.e /app/filename
